@@ -1,7 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="MSBuild.Sdk.Extras">
-
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;MonoAndroid90;Xamarin.iOS10;</TargetFrameworks>
-  </PropertyGroup>
-  
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;MonoAndroid90;Xamarin.iOS10;</TargetFrameworks>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Compile Include="Abstractions/*.cs" />
+        <Compile Include="Helpers/*.shared.cs" />
+    </ItemGroup>
+    
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+        <Compile Include="**/*.android.cs" />
+    </ItemGroup>
+    
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+        <Compile Include="**/*.ios.cs" />
+    </ItemGroup>
 </Project>
