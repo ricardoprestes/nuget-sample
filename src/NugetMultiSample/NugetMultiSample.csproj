@@ -8,6 +8,7 @@
     <ItemGroup>
         <Compile Include="Abstractions/*.cs" />
         <Compile Include="Helpers/*.shared.cs" />
+        <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
     </ItemGroup>
     
     <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
@@ -16,8 +17,5 @@
     
     <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
         <Compile Include="**/*.ios.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
     </ItemGroup>
 </Project>
