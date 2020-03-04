@@ -1,10 +1,11 @@
-﻿using System;
+﻿using NugetMultiSample.Abstractions;
+using Xamarin.Forms;
+
 namespace NugetMultiSample.Helpers
 {
     public class FileHelper
     {
-        public FileHelper()
-        {
-        }
+        public string GetLocalFilePath(string filename)
+            => DependencyService.Get<IFileHelper>().GetLocalFilePath(filename);
     }
 }
