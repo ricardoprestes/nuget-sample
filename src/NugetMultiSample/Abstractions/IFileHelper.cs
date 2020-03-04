@@ -1,7 +1,7 @@
-﻿using System;
-namespace NugetMultiSample.Abstractions
+﻿namespace NugetMultiSample.Abstractions
 {
     public interface IFileHelper
     {
+        string GetLocalFilePath(string filename);
     }
 }
